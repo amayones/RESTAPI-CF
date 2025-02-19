@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "5e9cb94f-e923-4116-bdde-1842acdc4a10",
+		"name": "REST-API-CF-BLOG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41771411"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get Post List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{RestApi-lat}}/posts",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Detail Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/posts/1",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|f4luIuF8k8reT8I4Mx6xEufpuVdpNlAUjDcuPVhOe73d228d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/akmal/Downloads/favicon.png"
+								},
+								{
+									"key": "title",
+									"value": "kuasa lord rangga",
+									"type": "text"
+								},
+								{
+									"key": "news_content",
+									"value": "Lorem ipsum dolor sit amet, erat primis mollis vivamus nec venenatis odio vestibulum. Nostra rutrum esse sapien magna condimentum. Facilisis culpa vitae dapibus primis suscipit tristique. Sed ut vestibulum netus enim cras irure quam sociis. Sociis class ipsum augue condimentum proin. Eros dolor aliqua non eu habitant dignissim facilisi. Per potenti consequat duis torquent imperdiet dignissim laoreet commodo. Facilisis tempor dis mi per cubilia ornare. Conubia hac porta suspendisse platea ante donec diam odio mattis. Tincidunt gravida metus class molestie natoque ligula morbi.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/posts",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|72XBN0tEtvVxJ3T5EX2eV3oATBs4GCex1iPc0CoAf1ad2f90",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Hitler yang tunduk kepada lord rangga\",\r\n    \"news_content\" : \"Eu turpis rutrum aliqua cubilia porttitor nulla. Donec proin do dignissim dictumst nisl cillum risus. Pellentesque interdum dapibus felis maecenas sociosqu dapibus nibh luctus fringilla. Dapibus eu nullam non adipiscing quam elementum dolore eleifend. Netus lobortis non tempor ante bibendum condimentum fugiat venenatis. Integer integer efficitur laoreet litora rhoncus varius congue.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/posts/4",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"posts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|72XBN0tEtvVxJ3T5EX2eV3oATBs4GCex1iPc0CoAf1ad2f90",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{RestApi-lat}}/posts/4",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"posts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/login",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{RestApi-lat}}/logout",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer Bearer 1|72XBN0tEtvVxJ3T5EX2eV3oATBs4GCex1iPc0CoAf1ad2f90",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{RestApi-lat}}/me",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|f4luIuF8k8reT8I4Mx6xEufpuVdpNlAUjDcuPVhOe73d228d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\" : 1,\r\n    \"comment_content\" : \"gajadi ah punya kamu jelek\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/comment",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|72XBN0tEtvVxJ3T5EX2eV3oATBs4GCex1iPc0CoAf1ad2f90",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment_content\" : \"Kamu sudah nyoba apa aja\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RestApi-lat}}/comment/1",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|72XBN0tEtvVxJ3T5EX2eV3oATBs4GCex1iPc0CoAf1ad2f90",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{RestApi-lat}}/comment/2",
+							"host": [
+								"{{RestApi-lat}}"
+							],
+							"path": [
+								"comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
